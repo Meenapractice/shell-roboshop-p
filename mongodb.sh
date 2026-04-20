@@ -33,7 +33,7 @@ systemctl enable mongod
 systemctl start mongod 
 VALIDATE $? "Enable and starting mongod"
 
-sed -i "%s/127.0.0.1/0.0.0.0" /etc/mongod.conf
+sed -i "s/127.0.0.1/0.0.0.0" /etc/mongod.conf
 VALIDATE $? "Changing private address in conf file"
 
 systemctl restart mongod
